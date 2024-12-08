@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "@/styles/globals.css";
 import NavBar from "@/components/common/NavBar";
 import MobileNavBar from "@/components/common/MobileNavBar";
+import ScrollToTop from "@/components/common/ScrollToTop";
+import ScrollProgressBar from "@/components/common/ScrollProgressBar";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -31,7 +33,9 @@ export default function RootLayout({
       >
         <NavBar />
         <MobileNavBar />
+        <ScrollProgressBar />
         <main className="flex flex-col gap-8 row-start-2 items-center">
+          <ScrollToTop />
           {children}
         </main>
       </body>
