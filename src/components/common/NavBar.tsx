@@ -34,11 +34,12 @@ const NavBar: React.FC = () => {
             {navBarData.map((menuItem, index) => (
               <motion.li
                 key={menuItem.label}
-                {...{ className: "relative group text-black dark:text-white" }}
-                onMouseEnter={() =>
-                  menuItem.submenu && setSubmenuOpenIndex(index)
-                }
-                onMouseLeave={() => setSubmenuOpenIndex(null)}
+                {...{
+                  onMouseEnter: () =>
+                    menuItem.submenu && setSubmenuOpenIndex(index),
+                  onMouseLeave: () => setSubmenuOpenIndex(null),
+                  className: "relative group text-black dark:text-white",
+                }}
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >

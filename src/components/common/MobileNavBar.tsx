@@ -27,7 +27,7 @@ const MobileNavBar: React.FC = () => {
     <AnimatePresence>
       {openSubmenuIndex === index && (
         <motion.ul
-          className="pl-4 mt-2 space-y-1"
+          {...{ className: "pl-4 mt-2 space-y-1" }}
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
@@ -88,7 +88,7 @@ const MobileNavBar: React.FC = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="overflow-hidden"
+            {...{ className: "overflow-hidden" }}
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
             exit={{ height: 0 }}
@@ -102,14 +102,19 @@ const MobileNavBar: React.FC = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -10 }}
                     transition={{ duration: 0.3 }}
-                    className="flex justify-between items-center cursor-pointer"
-                    onClick={() => toggleSubmenu(index)}
+                    {...{
+                      className:
+                        "flex justify-between items-center cursor-pointer",
+                      onClick: () => toggleSubmenu(index),
+                    }}
                   >
                     <div className="flex justify-between items-center w-full">
                       <span className="block">{item.label}</span>
                       {item.submenu && (
                         <motion.div
-                          className="ml-2 text-gray-700 dark:text-gray-300"
+                          {...{
+                            className: "ml-2 text-gray-700 dark:text-gray-300",
+                          }}
                           initial={{ rotate: 0 }}
                           animate={{
                             rotate: openSubmenuIndex === index ? 180 : 0,
