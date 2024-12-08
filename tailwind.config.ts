@@ -10,7 +10,9 @@ export default {
     extend: {
       colors: {
         black: "#0a0a0a",
-        white: "#ededed",
+        white: "#feffff",
+        thRed: "#e93d3d",
+        thGray: "#8d9598",
         background: "var(--background)",
         foreground: "var(--foreground)",
         slate: {
