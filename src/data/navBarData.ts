@@ -10,32 +10,26 @@ export const navBarData: MenuItem[] = [
     href: "/",
   },
   {
-    label: "About Us",
-    href: "/about-us",
+    label: "Tenants",
+    href: "/tenants",
   },
   {
-    label: "Properties",
+    label: "Services",
     href: "#",
     submenu: [
-      { label: "For Sale", href: "/properties/for-sale" },
-      { label: "For Rent", href: "/properties/for-rent" },
-      { label: "Luxury Homes", href: "/properties/luxury-homes" },
-      { label: "Commercial", href: "/properties/commercial" },
+      { label: "Guaranteed Rent", href: "/guaranteed-rent" },
+      { label: "Property Management", href: "/property-management" },
+      { label: "Smart Care Plan", href: "/smart-care-plan" },
     ],
   },
   {
-    label: "Insights",
-    href: "#",
-    submenu: [
-      {
-        label: "Agents",
-        href: "#",
-      },
-      { label: "News", href: "#" },
-      { label: "Blogs", href: "#" },
-    ],
+    label: "Landlords",
+    href: "/landlords",
   },
-
+  {
+    label: "Terms",
+    href: "/terms",
+  },
   {
     label: "Contact Us",
     href: "/contact",
