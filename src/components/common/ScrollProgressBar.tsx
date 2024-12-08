@@ -31,7 +31,7 @@ const ScrollProgressBar = () => {
         position: "fixed",
         top: 0,
         left: 0,
-        height: "10px",
+        height: "8px",
         background: "linear-gradient(90deg, #8d9598, #e93d3d)",
         transformOrigin: "0%",
         zIndex: 1000,
