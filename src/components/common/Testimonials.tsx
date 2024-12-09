@@ -1,0 +1,97 @@
+"use client";
+import { FC } from "react";
+import Slider from "react-slick";
+import { testimonials } from "@/data/testimonialsData";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { FaQuoteLeft } from "react-icons/fa";
+
+// Slick Slider settings with auto-slide and responsive design
+const settings = {
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
+const Testimonials: FC = () => {
+  return (
+    <section className="container mx-auto p-6">
+      {/* Section Title */}
+      <div className="flex items-center justify-center mb-6">
+        <div className="bg-thRed/20 p-1 px-2 inline-block rounded-full">
+          <h3 className="uppercase text-md md:text-lg lg:text-xl text-center tracking-widest text-thRed">
+            Testimonials
+          </h3>
+        </div>
+      </div>
+      <div className="flex items-center justify-center mb-12">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
+          What do our customers say?
+        </h2>
+      </div>
+      {/* Slider Component */}
+      <Slider {...settings}>
+        {testimonials.map((testimonial) => (
+          <div key={testimonial.id} className="p-4">
+            <motion.div
+              {...{
+                className:
+                  "bg-white p-2 rounded-lg cursor-pointer shadow-lg flex flex-col justify-between h-full relative",
+              }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              {/* Dark blur effect */}
+              <div className="flex justify-center mb-4 relative z-10">
+                <Image
+                  src={testimonial.photo || "/src/assets/images/person.png"}
+                  alt={testimonial.name}
+                  width={1000}
+                  height={1000}
+                  className="w-24 h-24 rounded-full object-cover"
+                />
+              </div>
+
+              {/* Testimonial Text and Quote Icon */}
+              <div className="relative mb-4 z-10">
+                <p className="text-lg text-gray-600 mb-4 line-clamp-3">
+                  {testimonial.text}
+                </p>
+                <div className="absolute left-0 top-0 text-thRed/20 text-8xl -z-10">
+                  <FaQuoteLeft />
+                </div>
+              </div>
+
+              {/* Customer Info */}
+              <h3 className="text-xl font-semibold text-gray-800 z-10">
+                {testimonial.name}
+              </h3>
+              <p className="text-gray-500 z-10">{testimonial.role}</p>
+            </motion.div>
+          </div>
+        ))}
+      </Slider>
+    </section>
+  );
+};
+
+export default Testimonials;

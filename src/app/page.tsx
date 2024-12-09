@@ -1,4 +1,5 @@
 import FilterBar from "@/components/common/FilterBar";
+import Testimonials from "@/components/common/Testimonials";
 import { Achievements } from "@/components/home/Achievements";
 import Banner from "@/components/home/Banner";
 import Listings from "@/components/home/Listings";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <OurServices />
       <Listings />
       <OurAmenities />
+      <Testimonials />
     </>
   );
 }
