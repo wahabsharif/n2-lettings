@@ -27,10 +27,16 @@ const ScrollToTop: React.FC = () => {
     };
   }, []);
 
+  const buttonProps = {
+    type: "button",
+    onClick: scrollToTop,
+    className:
+      "fixed bottom-4 right-4 p-4 bg-thDarkBlue w-15 h-15 bg-opacity-50 text-black dark:text-white rounded-full shadow-lg border-thRed border-2 focus:outline-none z-50 backdrop-blur-sm",
+  };
+
   return (
     <motion.button
-      onClick={scrollToTop}
-      className="fixed bottom-4 right-4 p-4 bg-thDarkBlue w-15 h-15 bg-opacity-50 text-black dark:text-white rounded-full shadow-lg border-thRed border-2 focus:outline-none z-50 backdrop-blur-sm"
+      {...buttonProps}
       whileHover={{
         scale: 1.1,
         y: -5,

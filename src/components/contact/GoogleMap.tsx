@@ -6,9 +6,9 @@ const GoogleMap: React.FC = () => {
 
   return (
     <div className="w-[90%] mx-auto my-8">
-      <div className="flex justify-center mb-4 border-b border-gray-300">
+      <div className="flex justify-center  mb-4 border-b border-gray-300">
         <button
-          className={`px-4 py-2 font-bold tracking-widest ${
+          className={`px-4 py-2 font-bold text-sm md:text-lg lg:text-xl tracking-widest ${
             activeTab === "headOffice"
               ? "border-b-2 border-thRed text-thRed"
               : "text-gray-600"
@@ -18,7 +18,7 @@ const GoogleMap: React.FC = () => {
           Head Office
         </button>
         <button
-          className={`px-4 py-2 font-bold tracking-widest ${
+          className={`px-4 py-2 font-bold text-sm md:text-lg lg:text-xl tracking-widest ${
             activeTab === "branchOffice"
               ? "border-b-2 border-thRed text-thRed"
               : "text-gray-600"
