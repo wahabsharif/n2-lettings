@@ -15,11 +15,6 @@ const contactData = [
     detail: "020 34170607",
   },
   {
-    icon: <AiOutlineHome className="text-4xl text-red-500" />,
-    title: "Branch Office",
-    detail: "5 Ewell Road, Cheam, SM3 8BZ",
-  },
-  {
     icon: <AiOutlineMail className="text-4xl text-purple-500" />,
     title: "Email",
     detail: "info@n2lettings.com",

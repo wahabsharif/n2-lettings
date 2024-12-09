@@ -7,10 +7,6 @@ export const footerData = {
     address: "30 Monarch Parade, London Road, Mitcham, CR4 3HA",
     phone: "020 34170607",
   },
-  branchOffice: {
-    address: "5 Ewell Road, Cheam, SM3 8BZ",
-    phone: "020 34170607",
-  },
   contactEmail: "info@n2lettings.com",
   usefulLinks: [
     { label: "Home", href: "/" },

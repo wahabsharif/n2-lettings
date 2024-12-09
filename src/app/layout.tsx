@@ -4,8 +4,6 @@ import "@/styles/globals.css";
 import NavBar from "@/components/common/NavBar";
 import MobileNavBar from "@/components/common/MobileNavBar";
 import ScrollToTop from "@/components/common/ScrollToTop";
-import ScrollProgressBar from "@/components/common/ScrollProgressBar";
-/* slick-carousel styles */
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "@/components/common/Footer";
@@ -37,7 +35,6 @@ export default function RootLayout({
       >
         <NavBar />
         <MobileNavBar />
-        <ScrollProgressBar />
         <main className="flex flex-col gap-8 row-start-2 items-center">
           <ScrollToTop />
           {children}

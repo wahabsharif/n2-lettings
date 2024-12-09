@@ -92,9 +92,6 @@ const Footer = () => {
             <p className="font-semibold">Head Office:</p>
             <p>{footerData.headOffice.address}</p>
             <p>{footerData.headOffice.phone}</p>
-            <p className="font-semibold mt-4">Branch Office:</p>
-            <p>{footerData.branchOffice.address}</p>
-            <p>{footerData.branchOffice.phone}</p>
           </div>
         </div>
 
