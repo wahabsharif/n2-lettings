@@ -39,7 +39,7 @@ body {
 
 .grad-text {
   background: linear-gradient(#8d9598, #e93d3d);
-  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
