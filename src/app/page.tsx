@@ -6,6 +6,7 @@ import Listings from "@/components/home/Listings";
 import OurAmenities from "@/components/home/OurAmenities";
 import OurServices from "@/components/home/OurServices";
 import WhoWeAre from "@/components/home/WhoWeAre";
+import NewsAndBlogsSlider from "@/components/newsAndBlogs/NewsAndBlogsSlider";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Listings />
       <OurAmenities />
       <Testimonials />
+      <NewsAndBlogsSlider />
     </>
   );
 }
