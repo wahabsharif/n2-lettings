@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
   const [submenuOpenIndex, setSubmenuOpenIndex] = useState<number | null>(null);
 
   return (
-    <nav className="bg-gray-100 dark:bg-gray-800/70 backdrop-blur-md fixed top-8 left-1/2 transform -translate-x-1/2 w-[95%] z-50 rounded-xl shadow-lg hidden md:block transition ease-in-out">
+    <nav className="bg-gray-100 dark:bg-gray-800/70 backdrop-blur-md fixed top-2 left-1/2 transform -translate-x-1/2 w-[95%] z-50 rounded-xl shadow-lg hidden md:block transition ease-in-out">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Left Side: Logo */}
         <Link href="/">
