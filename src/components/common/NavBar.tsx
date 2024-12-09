@@ -9,6 +9,7 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import ThemeToggle from "./ThemeToggle";
 import { FaSearch } from "react-icons/fa";
 import Logo from "@/assets/images/logo/n2-logo.svg";
+import { CgLogIn } from "react-icons/cg";
 
 const NavBar: React.FC = () => {
   const [submenuOpenIndex, setSubmenuOpenIndex] = useState<number | null>(null);
@@ -109,13 +110,24 @@ const NavBar: React.FC = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 200 }}
           >
-            <ThemeToggle />
+            <button className="p-2 flex justify-center items-center uppercase text-lg font-semibold tracking-widest rounded-xl focus:outline-none bg-gray-700 text-white">
+              <CgLogIn className="mr-2" size={24} />
+              Login
+            </button>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 200 }}
           >
-            <FaSearch />
+            <button className="p-2 rounded-xl focus:outline-none bg-gray-700 text-white">
+              <FaSearch size={24} />
+            </button>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
+            <ThemeToggle />
           </motion.div>
         </div>
       </div>

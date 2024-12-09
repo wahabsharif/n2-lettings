@@ -10,6 +10,7 @@ import { ImCross } from "react-icons/im";
 import { TiArrowSortedUp } from "react-icons/ti";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "@/assets/images/logo/n2-logo.svg";
+import { CgLogIn } from "react-icons/cg";
 
 const MobileNavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,9 +63,17 @@ const MobileNavBar: React.FC = () => {
         </Link>
 
         <div className="flex">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
+            <button className="p-2 mr-2 flex justify-center items-center uppercase text-lg font-semibold tracking-widest rounded-xl focus:outline-none bg-gray-700 text-white">
+              <CgLogIn size={24} />
+            </button>
+          </motion.div>
           <ThemeToggle />
           <button
-            className="ml-4 px-3 py-2 bg-gray-700 rounded-xl text-gray-100"
+            className="ml-2 px-3 py-2 bg-gray-700 rounded-xl text-gray-100"
             onClick={toggleMenu}
           >
             <motion.div

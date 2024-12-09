@@ -1,6 +1,8 @@
 // import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import placceHolder from "@/assets/images/placeholder-500x500.png";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const WhoWeAre: React.FC = () => {
@@ -8,10 +10,12 @@ const WhoWeAre: React.FC = () => {
     <section className="flex flex-col md:flex-row items-center py-16 px-6">
       {/* Left side: Image */}
       <div className="w-full md:w-1/2 mb-8 md:mb-0">
-        <img
-          src="https://via.placeholder.com/500" // Replace with your image
+        <Image
+          src={placceHolder}
           alt="N2 Lettings"
           className="w-full h-auto object-cover rounded-lg shadow-lg"
+          width={1000}
+          height={1000}
         />
       </div>
 
@@ -38,7 +42,7 @@ const WhoWeAre: React.FC = () => {
         <div className="space-y-4">
           <ul className="space-y-2 text-gray-600">
             <li className="flex items-center">
-              <FaMapMarkerAlt className="text-3xl text-gray-800 mr-3" />
+              <FaMapMarkerAlt className="text-3xl text-gray-800 dark:text-thGray mr-3" />
               <Link
                 href="https://www.google.com/maps?q=30+Monarch+Parade,+London+Road,+Mitcham+CR4+3HA"
                 target="_blank"
@@ -48,7 +52,7 @@ const WhoWeAre: React.FC = () => {
               </Link>
             </li>
             <li className="flex items-center">
-              <FaPhoneAlt className="text-3xl text-gray-800 mr-3" />
+              <FaPhoneAlt className="text-3xl text-gray-800 dark:text-thGray mr-3" />
               <Link
                 href="tel:02034170607"
                 className="text-thRed hover:text-thGray"
@@ -57,7 +61,7 @@ const WhoWeAre: React.FC = () => {
               </Link>
             </li>
             <li className="flex items-center">
-              <FaEnvelope className="text-3xl text-gray-800 mr-3" />
+              <FaEnvelope className="text-3xl text-gray-800 dark:text-thGray mr-3" />
               <Link
                 href="mailto:info@n2lettings.com"
                 className="text-thRed hover:text-thGray"
