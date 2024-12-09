@@ -22,14 +22,14 @@ const BreadCrumb = () => {
     : "Page";
 
   return (
-    <div className="bg-gradient-to-r from-thGray to-gray-400 py-8 rounded-xl  px-6 text-white relative">
+    <div className="bg-gradient-to-r from-thGray to-gray-400 py-4 md:py-8 rounded-xl px-4 md:px-6 text-white relative">
       {/* Display Path as Heading */}
-      <h1 className="text-5xl font-bold text-black/80 tracking-widest mb-4 relative z-10">
+      <h1 className="text-2xl md:text-5xl font-bold text-black/80 tracking-widest mb-2 md:mb-4 relative z-10">
         {heading}
       </h1>
 
       <nav aria-label="breadcrumb" className="relative z-10">
-        <ol className="flex items-center space-x-2 text-sm">
+        <ol className="flex flex-wrap items-center space-x-1 md:space-x-2 text-xs md:text-sm">
           <li className="breadcrumb-item">
             <Link href="/" className="text-thRed">
               Home
@@ -55,7 +55,7 @@ const BreadCrumb = () => {
                     {sanitizePath(segment)}
                   </Link>
                 )}
-                {!isLastSegment && <span className="mx-2">/</span>}
+                {!isLastSegment && <span className="mx-1 md:mx-2">/</span>}
               </li>
             );
           })}
