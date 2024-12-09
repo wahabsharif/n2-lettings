@@ -6,22 +6,25 @@ import Image from "next/image";
 
 // Slick Slider settings
 const settings = {
-  dots: false,
   infinite: true,
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
   responsive: [
     {
       breakpoint: 1024,
       settings: {
         slidesToShow: 2,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: 768,
       settings: {
         slidesToShow: 1,
+        slidesToScroll: 1,
       },
     },
   ],
@@ -29,7 +32,7 @@ const settings = {
 
 const NewsAndBlogsSlider = () => {
   return (
-    <div className="container mx-auto py-12">
+    <section className="container mx-auto p-6">
       <div className="flex items-center justify-center">
         <div className="bg-thRed/20 p-1 px-2 inline-block rounded-full">
           <h3 className="uppercase text-md md:text-lg lg:text-xl text-center tracking-widest text-thRed">
@@ -67,7 +70,7 @@ const NewsAndBlogsSlider = () => {
           </div>
         ))}
       </Slider>
-    </div>
+    </section>
   );
 };
 
