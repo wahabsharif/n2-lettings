@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 const ThemeToggle = () => {
   // Theme state (light or dark)
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light"); // Default to light theme
 
   // Toggle between light and dark mode
   const toggleTheme = () => {
@@ -19,7 +19,7 @@ const ThemeToggle = () => {
 
   // Check and apply saved theme from localStorage
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "dark";
+    const savedTheme = localStorage.getItem("theme") || "light"; // Default to light theme if no saved theme
     setTheme(savedTheme);
     document.documentElement.classList.toggle("dark", savedTheme === "dark");
   }, []);
