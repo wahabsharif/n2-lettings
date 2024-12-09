@@ -60,17 +60,6 @@ const Testimonials: FC = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              {/* Dark blur effect */}
-              <div className="flex justify-center mb-4 relative z-10">
-                <Image
-                  src={testimonial.photo || "/src/assets/images/person.png"}
-                  alt={testimonial.name}
-                  width={1000}
-                  height={1000}
-                  className="w-24 h-24 rounded-full object-cover"
-                />
-              </div>
-
               {/* Testimonial Text and Quote Icon */}
               <div className="relative mb-4 z-10">
                 <p className="text-lg text-gray-600 mb-4 line-clamp-3">
@@ -81,11 +70,23 @@ const Testimonials: FC = () => {
                 </div>
               </div>
 
-              {/* Customer Info */}
-              <h3 className="text-xl font-semibold text-gray-800 z-10">
-                {testimonial.name}
-              </h3>
-              <p className="text-gray-500 z-10">{testimonial.role}</p>
+              <div className="flex justify-start mb-6 relative z-10">
+                <div className="flex items-center space-x-4">
+                  <Image
+                    src={testimonial.photo || "/src/assets/images/person.png"}
+                    alt={testimonial.name}
+                    width={500} // Size of the image
+                    height={500}
+                    className="w-16 rounded-full object-cover border-4 border-gray-300"
+                  />
+                  <div className="text-start">
+                    <h3 className="text-xl font-semibold text-gray-800">
+                      {testimonial.name}
+                    </h3>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         ))}
