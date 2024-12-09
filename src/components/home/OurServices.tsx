@@ -31,7 +31,7 @@ const OurServices = () => {
     <div className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-center">
         <div className="bg-thRed/20 p-1 px-2 inline-block rounded-full">
-          <h3 className="text-md md:text-lg lg:text-xl text-center tracking-widest text-thRed">
+          <h3 className="text-md md:text-lg uppercase lg:text-xl text-center tracking-widest text-thRed">
             Our Services
           </h3>
         </div>

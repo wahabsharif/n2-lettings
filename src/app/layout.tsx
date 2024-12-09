@@ -5,6 +5,9 @@ import NavBar from "@/components/common/NavBar";
 import MobileNavBar from "@/components/common/MobileNavBar";
 import ScrollToTop from "@/components/common/ScrollToTop";
 import ScrollProgressBar from "@/components/common/ScrollProgressBar";
+/* slick-carousel styles */
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
