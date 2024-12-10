@@ -17,16 +17,16 @@ const BreadCrumb = () => {
   const pathSegments = pathname?.split("/").filter(Boolean);
 
   // Sanitize the last segment of the path for the heading
-  const heading = pathSegments
-    ? sanitizePath(pathSegments[pathSegments.length - 1])
-    : "Page";
+  // const heading = pathSegments
+  //   ? sanitizePath(pathSegments[pathSegments.length - 1])
+  //   : "Page";
 
   return (
-    <div className="bg-gradient-to-r from-thGray to-gray-400 py-4 md:py-8 rounded-xl px-4 md:px-6 text-white relative">
+    <div className="bg-gradient-to-r from-thGray to-gray-400 py-2 md:py-4 rounded-xl px-4 md:px-6 text-white relative">
       {/* Display Path as Heading */}
-      <h1 className="text-2xl md:text-5xl font-bold text-black/80 tracking-widest mb-2 md:mb-4 relative z-10">
+      {/* <h1 className="text-2xl md:text-5xl font-bold text-black/80 tracking-widest mb-2 md:mb-4 relative z-10">
         {heading}
-      </h1>
+      </h1> */}
 
       <nav aria-label="breadcrumb" className="relative z-10">
         <ol className="flex flex-wrap items-center space-x-1 md:space-x-2 text-xs md:text-sm">
