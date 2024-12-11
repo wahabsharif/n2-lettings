@@ -40,7 +40,10 @@ const PropertyDetails = () => {
             £{property.price} {property.units}
           </h2>
           <p className="mb-4">
-            <strong>Type:</strong> {property.propertyType}
+            <strong>Property Type:</strong> {property.propertyType}
+          </p>
+          <p className="mb-4">
+            <strong>Property Status:</strong> {property.propertyStatus}
           </p>
           <p className="mb-4">
             <strong>Beds:</strong> {property.beds}
