@@ -25,7 +25,7 @@ const NavBar: React.FC = () => {
             width={1000}
             height={1000}
             priority
-            className="w-28"
+            className="w-20"
           />
         </Link>
 
