@@ -1,41 +1,14 @@
 "use client";
 import { listingsData } from "@/data/listingsData";
 import Image from "next/image";
-import Slider from "react-slick";
 import { GiBed } from "react-icons/gi";
 import { FaShower } from "react-icons/fa6";
 import Link from "next/link";
 import { motion } from "framer-motion"; // Import framer-motion
 
-// Slick Slider settings
-const settings = {
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-};
-
-const PropertyListingsSlider = () => {
+const PropertyListingsGrid = () => {
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-2 md:m-6">
       <div className="flex items-center justify-center">
         <div className="bg-thRed/20 p-1 px-2 inline-block rounded-full">
           <h3 className="uppercase text-md md:text-lg lg:text-xl text-center tracking-widest text-thRed">
@@ -50,11 +23,22 @@ const PropertyListingsSlider = () => {
           </h2>
         </div>
       </div>
-      {/* Slick Slider Component */}
-      <Slider {...settings}>
+      {/* Property Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {listingsData.map((listing) => (
           <Link key={listing.id} href={`/properties/${listing.slug}`}>
-            <div className="p-6 cursor-pointer">
+            {/* Wrap the card in motion.div for animation */}
+            <motion.div
+              {...{ className: "p-6 cursor-pointer" }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3 },
+              }}
+              whileTap={{
+                scale: 0.95,
+                transition: { duration: 0.1 },
+              }}
+            >
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden w-full flex flex-col h-full relative">
                 <div className="relative w-full h-48">
                   {/* Set a fixed height for the image container */}
@@ -93,33 +77,12 @@ const PropertyListingsSlider = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </Link>
         ))}
-      </Slider>
-
-      {/* Explore More Button with Animation */}
-      <div className="flex justify-center mt-4">
-        <motion.div
-          whileHover={{
-            scale: 1.1,
-            transition: { duration: 0.3 },
-          }}
-          whileTap={{
-            scale: 0.95,
-            transition: { duration: 0.1 },
-          }}
-        >
-          <Link
-            href={"/properties"}
-            className="bg-thRed p-2 rounded-lg font-bold tracking-widest text-white"
-          >
-            Explore More
-          </Link>
-        </motion.div>
       </div>
     </div>
   );
 };
 
-export default PropertyListingsSlider;
+export default PropertyListingsGrid;
