@@ -45,16 +45,16 @@ const NavBar: React.FC = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Link href={menuItem.href}>
-                  <motion.div
+                  <motion.h6
                     whileHover={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200 }}
-                    {...{ className: "flex items-center " }}
+                    {...{ className: "flex items-center tracking-widest" }}
                   >
                     {menuItem.label}
                     {/* Arrow Icon - Appears when submenu exists */}
                     {menuItem.submenu && (
                       <motion.div
-                        {...{ className: "ml-1" }}
+                        {...{ className: "ml-1 tracking-widest" }}
                         initial={{ rotate: 0 }}
                         animate={{
                           rotate: submenuOpenIndex === index ? 180 : 0,
@@ -64,7 +64,7 @@ const NavBar: React.FC = () => {
                         <TiArrowSortedDown />
                       </motion.div>
                     )}
-                  </motion.div>
+                  </motion.h6>
                 </Link>
                 {/* Submenu */}
                 <AnimatePresence>
@@ -92,7 +92,7 @@ const NavBar: React.FC = () => {
                             href={submenuItem.href}
                             className="block px-4 py-2"
                           >
-                            {submenuItem.label}
+                            <h6> {submenuItem.label}</h6>
                           </Link>
                         </motion.li>
                       ))}
