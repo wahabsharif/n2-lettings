@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import { GiBed } from "react-icons/gi";
 import { FaShower } from "react-icons/fa6";
 import Link from "next/link";
+
 // Slick Slider settings
 const settings = {
   infinite: true,
@@ -59,7 +60,7 @@ const Listings = () => {
                   <Image
                     width={1000}
                     height={1000}
-                    src={listing.imgSrc || "/images/placeholder-500x500.png"}
+                    src={listing.imgSrc[0] || "/images/placeholder-500x500.png"}
                     alt={listing.title}
                     className="w-full h-full object-cover" // Image will fill the div
                   />
