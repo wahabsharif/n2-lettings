@@ -18,9 +18,14 @@ const Banner: React.FC = () => {
           in South-West London, offering tailored property solutions to help
           clients find a residential space they can call home.
         </p>
-        <button className="bg-thRed text-white px-6 py-3 rounded-lg shadow-lg hover:bg-thGray">
-          Get Started
-        </button>
+        <div className="">
+          <button className="bg-thRed uppercase  text-xs md:lg text-white px-16 py-3 rounded-lg shadow-lg hover:bg-thGray">
+            Tenants
+          </button>
+          <button className="bg-thRed uppercase m-4 text-xs md:lg text-white px-16 py-3 rounded-lg shadow-lg hover:bg-thGray">
+            Landlords
+          </button>
+        </div>
       </div>
 
       {/* Right Section */}
