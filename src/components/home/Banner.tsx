@@ -10,7 +10,7 @@ const Banner: React.FC = () => {
         <h1 className="text-2xl md:text-4xl lg:text-6xl grad-text font-bold text-gray-800 tracking-widest">
           N2 LETTINGS
         </h1>
-        <h2 className="text-lg text-gray-600 mb-4 tracking-widest">
+        <h2 className="text-lg text-gray-600 mb-4 tracking-[8px]">
           Your Real Estate Agent
         </h2>
         <p className="text-gray-500 mb-4">
