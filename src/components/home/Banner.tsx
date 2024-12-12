@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import bannerImage from "@/assets/images/home/banner-image.png";
+import Link from "next/link";
 
 const Banner: React.FC = () => {
   return (
@@ -19,12 +20,18 @@ const Banner: React.FC = () => {
           clients find a residential space they can call home.
         </p>
         <div className="space-y-2 space-x-2">
-          <button className="bg-thRed uppercase text-center text-xs tracking-widest text-white px-16 py-3 rounded-lg shadow-lg hover:bg-thGray w-48">
+          <Link
+            href={"/tenants"}
+            className="bg-thRed uppercase text-center text-xs tracking-widest text-white px-16 py-3 rounded-lg shadow-lg hover:bg-thGray w-48"
+          >
             Tenants
-          </button>
-          <button className="bg-thRed uppercase text-center text-xs tracking-widest text-white px-16 py-3 rounded-lg shadow-lg hover:bg-thGray w-48">
+          </Link>
+          <Link
+            href={"/landlords"}
+            className="bg-thRed uppercase text-center text-xs tracking-widest text-white px-16 py-3 rounded-lg shadow-lg hover:bg-thGray w-48"
+          >
             Landlords
-          </button>
+          </Link>
         </div>
       </div>
 
