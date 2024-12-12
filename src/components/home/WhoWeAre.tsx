@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import placceHolder from "@/assets/images/placeholder-500x500.png";
+import whoWeAre from "@/assets/images/home/about-us.jpeg";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const WhoWeAre: React.FC = () => {
@@ -11,7 +11,7 @@ const WhoWeAre: React.FC = () => {
       {/* Left side: Image */}
       <div className="w-full md:w-1/2 mb-8 md:mb-0">
         <Image
-          src={placceHolder}
+          src={whoWeAre}
           alt="N2 Lettings"
           className="w-full h-auto object-cover rounded-lg shadow-lg"
           width={1000}
