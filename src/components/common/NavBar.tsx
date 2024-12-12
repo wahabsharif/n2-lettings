@@ -30,7 +30,7 @@ const NavBar: React.FC = () => {
         </Link>
 
         {/* Center: Menu */}
-        <div className="relative">
+        <div className="relative ">
           <ul className="flex space-x-6">
             {navBarData.map((menuItem, index) => (
               <motion.li
@@ -48,13 +48,15 @@ const NavBar: React.FC = () => {
                   <motion.h6
                     whileHover={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200 }}
-                    {...{ className: "flex items-center tracking-widest" }}
+                    {...{
+                      className: "flex items-center uppercase tracking-widest",
+                    }}
                   >
                     {menuItem.label}
                     {/* Arrow Icon - Appears when submenu exists */}
                     {menuItem.submenu && (
                       <motion.div
-                        {...{ className: "ml-1 tracking-widest" }}
+                        {...{ className: "ml-1 uppercase tracking-widest" }}
                         initial={{ rotate: 0 }}
                         animate={{
                           rotate: submenuOpenIndex === index ? 180 : 0,
@@ -92,7 +94,7 @@ const NavBar: React.FC = () => {
                             href={submenuItem.href}
                             className="block px-4 py-2"
                           >
-                            <h6> {submenuItem.label}</h6>
+                            <h6 className="uppercase"> {submenuItem.label}</h6>
                           </Link>
                         </motion.li>
                       ))}

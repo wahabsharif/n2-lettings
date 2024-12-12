@@ -97,7 +97,7 @@ const MobileNavBar: React.FC = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            {...{ className: "overflow-hidden" }}
+            {...{ className: "overflow-hidden uppercase my-2" }}
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
             exit={{ height: 0 }}
@@ -118,7 +118,7 @@ const MobileNavBar: React.FC = () => {
                     }}
                   >
                     <div className="flex justify-between items-center w-full">
-                      <span className="block">{item.label}</span>
+                      <h3 className="block">{item.label}</h3>
                       {item.submenu && (
                         <motion.div
                           {...{
@@ -135,7 +135,7 @@ const MobileNavBar: React.FC = () => {
                       )}
                     </div>
                   </motion.div>
-                  {item.submenu && renderSubMenu(item.submenu, index)}
+                  <h3>{item.submenu && renderSubMenu(item.submenu, index)}</h3>
                 </li>
               ))}
               {/* <GetQuote /> */}
