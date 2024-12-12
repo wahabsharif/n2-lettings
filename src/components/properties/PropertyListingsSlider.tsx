@@ -44,7 +44,7 @@ const PropertyListingsSlider = () => {
         </div>
       </div>
       <div className="flex items-center justify-center">
-        <div className="mb-6 inline-block">
+        <div className="my-6 inline-block">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
             Houses & Flats to rent
           </h2>
