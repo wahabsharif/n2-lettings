@@ -13,6 +13,7 @@ const PropertyDetails = () => {
   const slug = params?.slug;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBookModalOpen, setIsBookModalOpen] = useState(false); // State for booking modal
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [, setDirection] = useState(0);
 
@@ -42,6 +43,16 @@ const PropertyDetails = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    document.body.style.overflow = "auto";
+  };
+
+  const openBookModal = () => {
+    setIsBookModalOpen(true); // Open the booking modal
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeBookModal = () => {
+    setIsBookModalOpen(false); // Close the booking modal
     document.body.style.overflow = "auto";
   };
 
@@ -121,10 +132,18 @@ const PropertyDetails = () => {
               {property.description}
             </li>
           </ul>
+
+          {/* Book Now Button */}
+          <button
+            className="mt-8 w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600"
+            onClick={openBookModal}
+          >
+            Book Now
+          </button>
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Image Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 backdrop-blur-md bg-black bg-opacity-50 flex items-center justify-center">
           <div className="relative w-full max-w-3xl h-[80vh] p-4">
@@ -165,6 +184,83 @@ const PropertyDetails = () => {
                 <FaArrowRight />
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Booking Modal */}
+      {isBookModalOpen && (
+        <div className="fixed inset-0 z-50 backdrop-blur-md bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="relative w-full max-w-lg p-8 bg-white rounded-lg shadow-lg dark:bg-gray-800 overflow-y-auto max-h-[90vh]">
+            <button
+              className="absolute top-4 right-4 text-white bg-gray-800 text-2xl font-semibold p-2 rounded-full hover:bg-gray-700"
+              onClick={closeBookModal}
+            >
+              <TiTimes />
+            </button>
+            <h3 className="text-2xl font-semibold text-center text-gray-800 dark:text-white">
+              N2 Lettings & Management
+            </h3>
+            <p className="mt-4 text-gray-600 text-center dark:text-gray-300">
+              Please fill in the details below to book this property.
+            </p>
+            <form className="mt-6 space-y-4">
+              <div>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your Name"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="phone"
+                  placeholder="Your Phone Number"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Your Email Address"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                />
+              </div>
+              <div>
+                <textarea
+                  id="message"
+                  rows={4}
+                  value={`Hello, I am interested in ${property.title}`}
+                  onChange={() => {
+                    // Handle the change event if necessary
+                  }}
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                />
+              </div>
+              <div>
+                <select
+                  id="role"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                >
+                  <option value="">Select</option>
+                  <option value="buyer">I&apos;m a Buyer</option>
+                  <option value="tenant">I&apos;m a Tenant</option>
+                  <option value="agent">I&apos;m an Agent</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="mt-4 w-full py-2 px-4 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                >
+                  Confirm Booking
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}
