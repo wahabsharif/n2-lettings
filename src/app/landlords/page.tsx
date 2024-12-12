@@ -1,12 +1,12 @@
 import PageBanner from "@/components/common/PageBanner";
-import TermsAndConditions from "@/components/Terms/TermsAndConditions";
+import LandlordsTerms from "@/components/Terms/LandlordsTerms";
 import React from "react";
 
-export default function TermPage() {
+export default function Landlords() {
   return (
     <>
       <PageBanner />
-      <TermsAndConditions />
+      <LandlordsTerms />
     </>
   );
 }
