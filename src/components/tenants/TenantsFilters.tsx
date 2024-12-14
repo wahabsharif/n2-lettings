@@ -7,7 +7,7 @@ const TenantsFilters: React.FC = () => {
         <motion.div
             {...{
                 className:
-                    "flex flex-col w-[100%] md:flex-row items-center justify-between gap-4 bg-white/30 dark:bg-gray-800/30 backdrop-blur-md px-8 pt-32 md:pb-4 shadow-md rounded-lg",
+                    "flex flex-col w-full mb-4 md:flex-row items-center justify-between gap-4 bg-white/30 dark:bg-gray-800/30 backdrop-blur-md px-8 pt-32 md:pb-4 shadow-md rounded-lg",
             }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ const TenantsFilters: React.FC = () => {
             </div>
 
             {/* Filter Button */}
-            <div className="w-full md:w-auto ">
+            <div className="w-full md:w-auto mb-6 md:mb-0 ">
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

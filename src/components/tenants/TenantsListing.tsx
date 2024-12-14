@@ -20,7 +20,7 @@ const TenantsListing: React.FC = () => {
                 <h2 className="text-xl font-bold mb-2">Exclusive Listings</h2>
                 <p className="dard:text-gray-700 mb-4 uppercase tracking-widest text-orange-200">Flats to let in south west london</p>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {tenantsCardsListingData.slice(0, visibleCards).map((card, index) => (
                         <div
                             key={index}
@@ -33,7 +33,7 @@ const TenantsListing: React.FC = () => {
                             )}
                             <img src={card.image} alt={card.title} className="w-full h-32 object-cover" />
                             <div className="p-4">
-                                <h3 className="font-semibold text-lg mb-2">{card.title}</h3>
+                                <h3 className="font-semibold text-center text-lg mb-2">{card.title}</h3>
                                 <p className="text-gray-700 text-base font-semibold text-center mb-2 dark:bg-gray-900 dark:text-gray-300">{card.price}</p>
                                 <p className="text-gray-700 dark:bg-gray-900  dark:text-gray-300 text-sm text-center mb-2">{card.category}</p>
                                 <div className="flex justify-center items-center gap-4 text-gray-500">
