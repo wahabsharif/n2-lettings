@@ -3,15 +3,25 @@ import React from 'react';
 
 interface BranchData {
   id: number;
-  mitcham: { name: string; email: string; contact: string };
-  cheam: { name: string; email: string; contact: string };
+  mitcham: { name: string; email: string; contact1: string; contact2: string };
+  cheam: { name: string; email: string; contact1: string; contact2: string };
 }
 
 const branchData: BranchData[] = [
   {
     id: 1,
-    mitcham: { name: 'N2 Lettings', email: 'mitcham@n2lettings.com', contact: '020 34170607' },
-    cheam: { name: 'N2 Lettings', email: 'cheam@n2lettings.com', contact: '020 86427175' },
+    mitcham: {
+      name: 'N2 Lettings',
+      email: 'N2lettings@gmail.com',
+      contact1: '020 34170607',
+      contact2: '020 34170608',
+    },
+    cheam: {
+      name: 'N2 Lettings',
+      email: 'N2lettings@gmail.com',
+      contact1: '020 86427175',
+      contact2: '020 86427176',
+    },
   },
 ];
 
@@ -21,7 +31,9 @@ const ContactLettings: React.FC = () => {
       {/* Heading and Paragraph */}
       <h2 className="text-2xl font-bold text-left mb-4">Contact N2 Lettings Guaranteed Rent</h2>
       <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 text-left">
-        We're committed to meeting and exceeding your expectations with our Guaranteed Rent—put our experience and knowledge of lettings to work for you. <span className="text-cyan-500 px-1">Leave us a message</span> or contact the nearest N2 Lettings.
+        We're committed to meeting and exceeding your expectations with our Guaranteed Rent—put our experience and
+        knowledge of lettings to work for you.{' '}
+        <span className="text-cyan-500 px-1">Leave us a message</span> or contact the nearest N2 Lettings.
       </p>
 
       {/* Table - wrap in a div for horizontal scroll */}
@@ -40,26 +52,37 @@ const ContactLettings: React.FC = () => {
                 <tr className="bg-gray-50 dark:bg-gray-900">
                   <td className="px-4 py-2">
                     <div className="font-semibold">{row.mitcham.name}</div>
-                    <span className="text-cyan-500">{row.mitcham.email}</span>
+                    <Link href={`mailto:${row.mitcham.email}`} className="text-cyan-500 hover:underline">
+                      {row.mitcham.email}
+                    </Link>
                   </td>
                   <td className="px-4 py-2">
                     <div className="font-semibold">{row.cheam.name}</div>
-                    <span className="text-cyan-500">{row.cheam.email}</span>
+                    <Link href={`mailto:${row.cheam.email}`} className="text-cyan-500 hover:underline">
+                      {row.cheam.email}
+                    </Link>
                   </td>
                 </tr>
-                {/* Second Row: Contact */}
+                {/* Second Row: Contact1 */}
                 <tr className="dark:bg-gray-900">
                   <td className="px-4 py-2">
-                    <Link href={`tel:${row.cheam.contact}`} className="text-gray-600 dark:text-gray-300 hover:underline">
-                      {row.cheam.contact}
+                    <Link
+                      href={`tel:${row.mitcham.contact1}`}
+                      className="text-gray-600 dark:text-gray-300 hover:underline"
+                    >
+                      {row.mitcham.contact1}
                     </Link>
                   </td>
-                  <td className="px-4 py-2 ">
-                    <Link href={`tel:${row.cheam.contact}`} className="text-gray-600 dark:text-gray-300 hover:underline">
-                      {row.cheam.contact}
+                  <td className="px-4 py-2">
+                    <Link
+                      href={`tel:${row.cheam.contact1}`}
+                      className="text-gray-600 dark:text-gray-300 hover:underline"
+                    >
+                      {row.cheam.contact1}
                     </Link>
                   </td>
                 </tr>
+
               </React.Fragment>
             ))}
           </tbody>

@@ -15,7 +15,7 @@ const ServicesContent: React.FC = () => {
             transition={{ duration: 0.3 }}
         >
             {/* Heading */}
-            <h2 className="text-center text-2xl font-bold mb-8">Our Services</h2>
+            <h2 className="text-center text-2xl font-bold my-12">Our Services</h2>
 
             <div className="flex flex-col md:flex-row justify-center items-start gap-4">
                 {/* Left Section */}

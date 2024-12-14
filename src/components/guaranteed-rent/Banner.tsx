@@ -6,10 +6,9 @@ import { motion } from "framer-motion"; // Import Framer Motion
 const GuaranteedBanner: React.FC = () => {
     return (
         <section
-            className="relative w-full bg-cover bg-center h-96 flex items-center justify-center text-center"
+            className="relative w-full bg-cover bg-center h-[30rem] flex items-center justify-center text-center"
             style={{
                 backgroundImage: `
-              radial-gradient(circle, rgba(220,51,50,0.5193678057160365) 0%, rgba(1,53,80,1) 67%),
               url('/uploads/4-bed-detached-house-to-rent-in-kynaston-avenue-thornton-heath-cr7-1.jpg')
             `,
                 backgroundSize: "cover",
