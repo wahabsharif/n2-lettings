@@ -14,7 +14,7 @@ export function Achievements() {
       {achievements.map((achievement) => (
         <div
           key={achievement.id}
-          className="flex flex-col items-center text-center bg-gray-100 p-4 rounded-lg shadow-md dark:bg-gray-800"
+          className="flex flex-col items-center text-center bg-gray-100 p-10 rounded-lg shadow-md dark:bg-gray-800"
         >
           <div className="text-5xl text-thRed">{achievement.icon}</div>
           <h3 className="mt-4 text-xl font-semibold text-black dark:text-white">

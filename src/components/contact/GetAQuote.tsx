@@ -20,11 +20,10 @@ const GetAQuote: React.FC = () => {
         }}
       >
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-          Get a Quote
+          Send us an Email
         </h2>
         <p className="text-gray-600 mb-8 text-sm sm:text-base lg:text-lg">
-          Fill out the form below, and we’ll get back to you with a personalized
-          quote.
+          Fill out the form below, and we’ll get back to you.
         </p>
         <form className="bg-white shadow-md rounded-lg p-6 sm:p-8 lg:p-10">
           <div className="mb-4">

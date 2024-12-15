@@ -28,7 +28,7 @@ const TermsAndConditions = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-3xl font-bold w-full text-center text-blue-600 dark:text-blue-400">
+        <h1 className="text-3xl font-bold w-full text-center text-gray-500 dark:text-blue-400">
           {termsAndConditionsData.title}
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300">
@@ -43,7 +43,7 @@ const TermsAndConditions = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: index * 0.5, duration: 1 }}
           >
-            <h2 className="text-2xl font-semibold text-blue-500 dark:text-blue-300">
+            <h2 className="text-2xl font-semibold text-gray-500 dark:text-blue-300">
               {section.title}
             </h2>
             {formatContent(section.content)}

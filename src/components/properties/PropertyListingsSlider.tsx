@@ -1,39 +1,13 @@
 "use client";
 import { listingsData } from "@/data/listingsData";
 import Image from "next/image";
-import Slider from "react-slick";
 import { GiBed } from "react-icons/gi";
 import { FaShower } from "react-icons/fa6";
 import Link from "next/link";
 import { motion } from "framer-motion"; // Import framer-motion
 
-// Slick Slider settings
-const settings = {
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-};
-
-const PropertyListingsSlider = () => {
+const PropertyListings = () => {
+  const listingsToShow = listingsData.slice(0, 3);
   return (
     <div className="container mx-auto p-6">
       <div className="flex items-center justify-center">
@@ -50,9 +24,9 @@ const PropertyListingsSlider = () => {
           </h2>
         </div>
       </div>
-      {/* Slick Slider Component */}
-      <Slider {...settings}>
-        {listingsData.map((listing) => (
+      {/* Listing Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {listingsToShow.map((listing) => (
           <Link key={listing.id} href={`/properties/${listing.slug}`}>
             <div className="p-6 cursor-pointer">
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden w-full flex flex-col h-full relative">
@@ -96,7 +70,7 @@ const PropertyListingsSlider = () => {
             </div>
           </Link>
         ))}
-      </Slider>
+      </div>
 
       {/* Explore More Button with Animation */}
       <div className="flex justify-center mt-4">
@@ -122,4 +96,4 @@ const PropertyListingsSlider = () => {
   );
 };
 
-export default PropertyListingsSlider;
+export default PropertyListings;

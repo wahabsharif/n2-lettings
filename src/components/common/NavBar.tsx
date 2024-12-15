@@ -1,15 +1,12 @@
 "use client";
-
 import React, { useState } from "react";
 import { navBarData } from "@/data/navBarData";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { TiArrowSortedDown } from "react-icons/ti";
-import ThemeToggle from "./ThemeToggle";
-import { FaSearch } from "react-icons/fa";
 import Logo from "@/assets/images/logo/n2-logo.svg";
-import { CgLogIn } from "react-icons/cg";
+
 
 const NavBar: React.FC = () => {
   const [submenuOpenIndex, setSubmenuOpenIndex] = useState<number | null>(null);
@@ -41,15 +38,11 @@ const NavBar: React.FC = () => {
                   onMouseLeave: () => setSubmenuOpenIndex(null),
                   className: "relative group text-black dark:text-white",
                 }}
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
               >
                 <Link href={menuItem.href}>
                   <motion.h6
-                    whileHover={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 200 }}
                     {...{
-                      className: "flex items-center uppercase tracking-widest",
+                      className: "flex items-center uppercase tracking-widest hover:text-red-500",
                     }}
                   >
                     {menuItem.label}
@@ -81,13 +74,9 @@ const NavBar: React.FC = () => {
                       {menuItem.submenu.map((submenuItem) => (
                         <motion.li
                           key={submenuItem.label}
-                          whileHover={{
-                            scale: 1.1,
-                          }}
-                          transition={{ type: "spring", stiffness: 200 }}
                           {...{
                             className:
-                              "bg-gray-100 dark:bg-gray-800 backdrop-blur-md rounded-xl shadow-lg ",
+                              "bg-gray-100 dark:bg-gray-800 backdrop-blur-md rounded-xl shadow-lg hover:text-red-500",
                           }}
                         >
                           <Link
@@ -106,32 +95,7 @@ const NavBar: React.FC = () => {
           </ul>
         </div>
 
-        {/* Right Side: Button */}
-        <div className="flex items-center space-x-2">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 200 }}
-          >
-            <button className="p-2 flex justify-center items-center uppercase text-lg font-semibold tracking-widest rounded-xl focus:outline-none bg-gray-700 text-white">
-              <CgLogIn className="mr-2" size={24} />
-              Login
-            </button>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 200 }}
-          >
-            <button className="p-2 rounded-xl focus:outline-none bg-gray-700 text-white">
-              <FaSearch size={24} />
-            </button>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 200 }}
-          >
-            <ThemeToggle />
-          </motion.div>
-        </div>
+
       </div>
     </nav>
   );
