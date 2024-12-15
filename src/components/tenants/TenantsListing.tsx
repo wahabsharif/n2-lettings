@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { FaBed, FaShower } from "react-icons/fa";
 import { tenantsCardsListingData } from "@/data/TenantCardListingData";
+import Image from "next/image";
 
 
 
@@ -31,7 +31,7 @@ const TenantsListing: React.FC = () => {
                                     Featured
                                 </span>
                             )}
-                            <img src={card.image} alt={card.title} className="w-full h-32 object-cover" />
+                            <Image src={card.image} width={200} height={200} alt={card.title} className="w-full h-32 object-cover" />
                             <div className="p-4">
                                 <h3 className="font-semibold text-center text-lg mb-2">{card.title}</h3>
                                 <p className="text-gray-700 text-base font-semibold text-center mb-2 dark:bg-gray-900 dark:text-gray-300">{card.price}</p>

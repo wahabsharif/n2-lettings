@@ -1,29 +1,8 @@
+import { branchData } from '@/data/propertyTermsData';
 import Link from 'next/link';
 import React from 'react';
 
-interface BranchData {
-    id: number;
-    mitcham: { name: string; email: string; contact1: string; contact2: string };
-    cheam: { name: string; email: string; contact1: string; contact2: string };
-}
 
-const branchData: BranchData[] = [
-    {
-        id: 1,
-        mitcham: {
-            name: 'N2 Lettings',
-            email: 'N2lettings@gmail.com',
-            contact1: '020 34170607',
-            contact2: '020 34170608',
-        },
-        cheam: {
-            name: 'N2 Lettings',
-            email: 'N2lettings@gmail.com',
-            contact1: '020 86427175',
-            contact2: '020 86427176',
-        },
-    },
-];
 
 const PropertyManagementContact: React.FC = () => {
     return (
@@ -31,7 +10,7 @@ const PropertyManagementContact: React.FC = () => {
             {/* Heading and Paragraph */}
             <h2 className="text-2xl font-bold text-left mb-4">Contact N2 Lettings-Property Management</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 text-left">
-                We're committed to meeting and exceeding your expectations with our Guaranteed Rent—put our experience and
+                We are committed to meeting and exceeding your expectations with our Guaranteed Rent—put our experience and
                 knowledge of lettings to work for you.{' '}
                 <span className="text-cyan-500 px-1">Leave us a message</span> or contact the nearest N2 Lettings.
             </p>

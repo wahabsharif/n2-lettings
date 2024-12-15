@@ -8,13 +8,13 @@ const PropertyContent: React.FC = () => {
             <div className="flex flex-wrap w-11/12 md:w-10/12 lg:w-8/12    overflow-hidden">
                 {/* Left Sub-Div */}
                 <div className="w-full md:w-1/2 p-6 flex flex-col justify-center items-start text-gray-600 dark:text-gray-100">
-                    <h1 className="text-base font-semibold tracking-widest  mb-3">"We strive to make sure</h1>
+                    <h1 className="text-base font-semibold tracking-widest  mb-3">&quot;We strive to make sure</h1>
                     <h2 className="text-base font-semibold tracking-widest  mb-3">each and every one of our</h2>
                     <h3 className="text-base font-semibold tracking-widest  mb-3">clients is given peace of</h3>
                     <h3 className="text-base font-semibold tracking-widest  mb-3">mind that their</h3>
                     <h4 className="text-base font-semibold tracking-widest  mb-5">investment is getting the</h4>
                     <h4 className="text-base font-semibold tracking-widest  mb-5">care and attention it</h4>
-                    <h4 className="text-base font-semibold tracking-widest  mb-5">deserves"</h4>
+                    <h4 className="text-base font-semibold tracking-widest  mb-5">deserves&quot;</h4>
                 </div>
 
                 {/* Right Sub-Div */}
@@ -29,7 +29,7 @@ const PropertyContent: React.FC = () => {
                         Whether you own a mutli-asset portfolio of commercial properties or a buy-to-let investment, we perdict and react to market conditions ahead,tailoring our advice and, in tum,servies to make sure your property  provides you with consistent returns on investment as long as you own it.
                     </p>
                     <p className="text-gray-700 dark:text-gray-300">
-                        Get tailored, specialist advice whenever you're ready.
+                        Get tailored, specialist advice whenever you&apos;re ready.
                     </p>
                 </div>
             </div>

@@ -10,7 +10,7 @@ const ComparisonTable: React.FC = () => {
       {/* Heading and Paragraph */}
       <h2 className="text-2xl font-bold text-left mb-4">Comparison with High Street Agents</h2>
       <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 text-left">
-        Compare the benefits of N2 Lettings' Guaranteed Rent scheme with traditional high street agents.
+        Compare the benefits of N2 Lettings Guaranteed Rent scheme with traditional high street agents.
       </p>
 
       {/* Table - wrap in a div for horizontal scroll */}

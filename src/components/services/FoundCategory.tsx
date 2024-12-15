@@ -18,7 +18,7 @@ const FoundCategory = () => {
             id="role"
             className="w-full p-2 border dark:bg-gray-900 dark:text-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
           >
-            <option value="">I'm a</option>
+            <option value="">I&apos;m a</option>
             <option value="tenant">Tenant</option>
             <option value="landlord">Landlord</option>
           </select>
