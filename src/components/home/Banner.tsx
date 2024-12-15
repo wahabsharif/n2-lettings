@@ -5,30 +5,30 @@ import Link from "next/link";
 
 const Banner: React.FC = () => {
   return (
-    <div className="flex flex-col mt-20 md:flex-row items-center min-h-screen p-8 md:p-16">
+    <section className="flex flex-col-reverse w-full py-20 justify-center md:flex-row items-center min-h-screen px-4 md:px-8 overflow-x-hidden">
       {/* Left Section */}
-      <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-        <h1 className="text-2xl md:text-4xl lg:text-6xl grad-text font-bold text-gray-800 tracking-widest">
+      <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl grad-text font-bold text-gray-800 tracking-widest">
           N2 LETTINGS
         </h1>
-        <h2 className="text-lg text-gray-600 mb-4 tracking-[8px]">
+        <h2 className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-4 tracking-[6px] sm:tracking-[8px]">
           Your Real Estate Agent
         </h2>
-        <p className="text-gray-500 mb-4">
+        <p className="text-gray-500 mb-4 text-sm sm:text-base md:text-lg">
           N2 Lettings and Management Ltd is a full-service real estate brokerage
           in South-West London, offering tailored property solutions to help
           clients find a residential space they can call home.
         </p>
-        <div className="space-y-2 space-x-2">
+        <div className="space-x-2 flex justify-center items-center">
           <Link
             href={"/tenants"}
-            className="bg-thRed uppercase text-center text-xs tracking-widest text-white px-16 py-3 rounded-lg shadow-lg hover:bg-thGray w-48"
+            className="bg-thRed uppercase text-center text-xs tracking-widest text-white px-6  py-3 rounded-lg shadow-lg hover:bg-thGray w-48"
           >
             Tenants
           </Link>
           <Link
             href={"/landlords"}
-            className="bg-thRed uppercase text-center text-xs tracking-widest text-white px-16 py-3 rounded-lg shadow-lg hover:bg-thGray w-48"
+            className="bg-thRed uppercase text-center text-xs tracking-widest text-white px-6  py-3 rounded-lg shadow-lg hover:bg-thGray w-48"
           >
             Landlords
           </Link>
@@ -36,16 +36,16 @@ const Banner: React.FC = () => {
       </div>
 
       {/* Right Section */}
-      <div className="md:w-1/2 flex justify-center">
+      <div className="w-full md:w-1/2 flex justify-center max-w-full">
         <Image
           src={bannerImage}
           alt="Banner Image"
-          className="w-full max-w-sm md:max-w-md"
+          className="w-full max-w-full h-auto"
           width={1000}
           height={1000}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
