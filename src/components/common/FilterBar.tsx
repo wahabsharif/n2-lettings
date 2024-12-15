@@ -1,68 +1,55 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const FilterBar: React.FC = () => {
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+
+  // Handle property type selection (allow multiple selections)
+  const handleTypeSelection = (type: string) => {
+    setSelectedTypes((prevSelected) =>
+      prevSelected.includes(type)
+        ? prevSelected.filter((item) => item !== type) // Deselect if already selected
+        : [...prevSelected, type] // Select the type if not already selected
+    );
+  };
+
+  // Reset all filters
+  const resetFilters = () => {
+    setSelectedTypes([]);
+  };
+
   return (
     <motion.div
       {...{
-        className:
-          "flex flex-col w-[90%] md:flex-row items-center justify-between bg-white/30 dark:bg-gray-800/30 backdrop-blur-md p-4 shadow-md rounded-lg",
+        className: "flex flex-col w-[90%] md:flex-row items-center justify-end bg-white/30 dark:bg-gray-800/30 backdrop-blur-md p-4"
       }}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      {/* Choose Area Dropdown */}
-      <div className="w-full md:w-1/4 mb-4 md:mb-0">
-        <select
-          id="area"
-          className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md focus:ring focus:ring-blue-300 dark:focus:ring-blue-700 focus:outline-none bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300"
-        >
-          <option value="">Select Area</option>
-          <option value="area1">Area 1</option>
-          <option value="area2">Area 2</option>
-          <option value="area3">Area 3</option>
-        </select>
+      {/* Property Type Buttons */}
+      <div className="w-full md:w-[80%] mb-4 md:mb-0 flex flex-wrap gap-2">
+        {["Room", "Studio Flat", "1 Bedroom", "2 Bedroom", "3 Bedroom", "4 Bedroom", "5 or More Bedroom"].map((type) => (
+          <button
+            key={type}
+            onClick={() => handleTypeSelection(type)}
+            className={`px-4 py-2 rounded-md text-black focus:outline-none transition-all transform ${selectedTypes.includes(type) ? "bg-red-500" : "bg-gray-100"
+              } hover:bg-red-400 active:scale-95`}
+          >
+            {type}
+          </button>
+        ))}
       </div>
 
-      {/* Property Status Dropdown */}
-      <div className="w-full md:w-1/4 mb-4 md:mb-0">
-        <select
-          id="status"
-          className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md focus:ring focus:ring-blue-300 dark:focus:ring-blue-700 focus:outline-none bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300"
+      {/* Reset Filters Button */}
+      <div className="w-full md:w-1/4">
+        <button
+          onClick={resetFilters}
+          className="w-full p-2 rounded-md text-white bg-gray-300 focus:outline-none transition-all transform hover:bg-red-400 active:scale-95"
         >
-          <option value="">Select Status</option>
-          <option value="for_sale">For Sale</option>
-          <option value="for_rent">For Rent</option>
-        </select>
-      </div>
-
-      {/* Property Type Dropdown */}
-      <div className="w-full md:w-1/4 mb-4 md:mb-0">
-        <select
-          id="type"
-          className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md focus:ring focus:ring-blue-300 dark:focus:ring-blue-700 focus:outline-none bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300"
-        >
-          <option value="">Select Type</option>
-          <option value="apartment">Apartment</option>
-          <option value="house">House</option>
-          <option value="commercial">Commercial</option>
-        </select>
-      </div>
-
-      {/* Filter Button */}
-      <div className="w-full md:w-auto ">
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          {...{
-            className:
-              "w-full md:w-auto px-6 py-2 text-white font-medium rounded-md hover:bg-thGray bg-thRed focus:ring focus:ring-blue-300 dark:focus:ring-blue-700 focus:outline-none",
-          }}
-        >
-          Filter
-        </motion.button>
+          Reset
+        </button>
       </div>
     </motion.div>
   );

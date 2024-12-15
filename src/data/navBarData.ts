@@ -15,7 +15,7 @@ export const navBarData: MenuItem[] = [
   },
   {
     label: "Services",
-    href: "#",
+    href: "/services",
     submenu: [
       { label: "Guaranteed Rent", href: "/guaranteed-rent" },
       { label: "Property Management", href: "/property-management" },

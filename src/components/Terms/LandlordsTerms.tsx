@@ -57,7 +57,7 @@ const LandlordsTerms: React.FC = () => {
       </div>
 
       {/* Sticky Form Section */}
-      <div className="w-full lg:w-1/3 sticky top-16 max-h-screen overflow-auto bg-white dark:bg-gray-800 shadow-md p-6 rounded-lg">
+      <div className="w-full lg:w-1/3 sticky top-16   bg-white dark:bg-gray-800 shadow-md p-6 rounded-lg">
         <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
           Get in Touch
         </h3>
@@ -76,10 +76,13 @@ const LandlordsTerms: React.FC = () => {
             <select
               id="role"
               className="w-full border border-gray-300 dark:border-gray-600 p-2 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              value="landlord"
+              disabled
             >
               <option value="landlord">Landlord</option>
               <option value="tenant">Tenant</option>
             </select>
+
           </div>
           <div className="mb-4">
             <label
@@ -108,6 +111,30 @@ const LandlordsTerms: React.FC = () => {
               className="w-full border border-gray-300 dark:border-gray-600 p-2 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               placeholder="Last Name"
             />
+          </div>
+
+          <div className="mb-4">
+            <label
+              htmlFor="role"
+              className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"
+            >
+              property size
+            </label>
+            <select
+              id="role"
+              className="w-full border border-gray-300 dark:border-gray-600 p-2 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+            >
+              <option value="" disabled>Select Property Size</option> {/* Placeholder option */}
+              <option value="apartment">Apartment</option>
+              <option value="house">House</option>
+              <option value="commercial">Commercial</option>
+              <option value="for-sale">For Sale</option>
+              <option value="for-rent">For Rent</option>
+            </select>
+
+
+
+
           </div>
           <div className="mb-4">
             <label
