@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import pool from "../../../lib/db";
 import { ResultSetHeader } from "mysql2";
+import bcrypt from "bcryptjs";
 
 export default async function handler(
   req: NextApiRequest,
@@ -57,9 +58,11 @@ export default async function handler(
           return;
         }
 
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         const [result] = await pool.query<ResultSetHeader>(
           "INSERT INTO users (first_name, last_name, username, email, phone, role, password) VALUES (?, ?, ?, ?, ?, ?, ?)",
-          [first_name, last_name, username, email, phone, role, password]
+          [first_name, last_name, username, email, phone, role, hashedPassword]
         );
 
         res.status(201).json({
@@ -75,7 +78,10 @@ export default async function handler(
           return;
         }
 
-        const { ...updateFields } = req.body;
+        const { password: newPassword, ...updateFields } = req.body;
+        if (newPassword) {
+          updateFields.password = await bcrypt.hash(newPassword, 10);
+        }
 
         const updateKeys = Object.keys(updateFields);
         const updateValues = Object.values(updateFields);
