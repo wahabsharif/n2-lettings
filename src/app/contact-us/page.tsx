@@ -2,16 +2,19 @@ import PageBanner from "@/components/common/PageBanner";
 import ContactCards from "@/components/contact/ContactCards";
 import GetAQuote from "@/components/contact/GetAQuote";
 import GoogleMap from "@/components/contact/GoogleMap";
+import WebLayout, { generateMetadata } from "@/layouts/WebLayout";
 
-const Page = () => {
+export const metadata = generateMetadata({ pageTitle: "Contact Us" });
+
+const ContactPage = () => {
   return (
-    <>
+    <WebLayout>
       <PageBanner />
       <ContactCards />
       <GetAQuote />
       <GoogleMap />
-    </>
+    </WebLayout>
   );
 };
 
-export default Page;
+export default ContactPage;

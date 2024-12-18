@@ -6,10 +6,13 @@ import PropertyListingsSlider from "@/components/properties/PropertyListingsSlid
 import OurAmenities from "@/components/home/OurAmenities";
 import OurServices from "@/components/home/OurServices";
 import WhoWeAre from "@/components/home/WhoWeAre";
+import WebLayout, { generateMetadata } from "@/layouts/WebLayout";
+
+export const metadata = generateMetadata({ pageTitle: "" });
 
 export default function HomePage() {
   return (
-    <>
+    <WebLayout>
       <Banner />
       <WhoWeAre />
       <Achievements />
@@ -18,6 +21,6 @@ export default function HomePage() {
       <PropertyListingsSlider />
       <OurAmenities />
       <Testimonials />
-    </>
+    </WebLayout>
   );
 }

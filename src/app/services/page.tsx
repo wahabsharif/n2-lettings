@@ -1,10 +1,15 @@
-import ServicesContent from '@/components/services/ServicesContent'
-import React from 'react'
+import ServicesContent from "@/components/services/ServicesContent";
+import React from "react";
+import WebLayout, { generateMetadata } from "@/layouts/WebLayout";
+
+export const metadata = generateMetadata({ pageTitle: "Services" });
 
 const Services = () => {
-    return (
-        <div><ServicesContent /></div>
-    )
-}
+  return (
+    <WebLayout>
+      <ServicesContent />
+    </WebLayout>
+  );
+};
 
-export default Services
+export default Services;

@@ -2,17 +2,20 @@ import PageBanner from "@/components/common/PageBanner";
 import PropertyManagementContact from "@/components/property-management/ContactPropertyManagement";
 import PropertyContent from "@/components/property-management/PropertyContent";
 import PropertyTerms from "@/components/property-management/RulesRegulation";
+import WebLayout, { generateMetadata } from "@/layouts/WebLayout";
 import React from "react";
 
-const ProjectManagement = () => {
+export const metadata = generateMetadata({ pageTitle: "Property Management" });
+
+const PropertyManagement = () => {
   return (
-    <>
+    <WebLayout>
       <PageBanner />
       <PropertyContent />
       <PropertyTerms />
       <PropertyManagementContact />
-    </>
+    </WebLayout>
   );
 };
 
-export default ProjectManagement;
+export default PropertyManagement;
