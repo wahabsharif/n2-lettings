@@ -1,5 +1,5 @@
 import FilterBar from "@/components/common/FilterBar";
-import Testimonials from "@/components/common/Testimonials";
+// import Testimonials from "@/components/common/Testimonials";
 import { Achievements } from "@/components/home/Achievements";
 import Banner from "@/components/home/Banner";
 import PropertyListingsSlider from "@/components/properties/PropertyListingsSlider";
@@ -20,7 +20,7 @@ export default function HomePage() {
       <FilterBar />
       <PropertyListingsSlider />
       <OurAmenities />
-      <Testimonials />
+      {/* <Testimonials /> */}
     </WebLayout>
   );
 }

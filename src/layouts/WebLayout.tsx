@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import NavBar from "@/components/common/NavBar";
 import "@/styles/globals.css";
 import MobileNavBar from "@/components/common/MobileNavBar";
+import ScrollToTop from "@/components/common/ScrollToTop";
+import Footer from "@/components/common/Footer";
 
 interface WebLayoutProps {
   children: React.ReactNode;
@@ -25,7 +27,9 @@ const WebLayout: React.FC<WebLayoutProps> = ({ children }) => {
         <NavBar />
         <MobileNavBar />
       </header>
+      <ScrollToTop />
       <main className="flex-1">{children}</main>
+      <Footer />
     </body>
   );
 };
