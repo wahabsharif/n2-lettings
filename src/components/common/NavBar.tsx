@@ -7,13 +7,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { TiArrowSortedDown } from "react-icons/ti";
 import Logo from "@/assets/images/logo/n2-logo.svg";
 
-
 const NavBar: React.FC = () => {
   const [submenuOpenIndex, setSubmenuOpenIndex] = useState<number | null>(null);
 
   return (
     <nav className="bg-gray-100 dark:bg-gray-800/70 backdrop-blur-md fixed top-2 left-1/2 transform -translate-x-1/2 w-[95%] z-50 rounded-xl shadow-lg hidden md:block transition ease-in-out">
-      <div className="container mx-auto flex items-center justify-between p-4">
+      <div className="container mx-auto flex items-center justify-between p-2">
         {/* Left Side: Logo */}
         <Link href="/">
           <Image
@@ -22,13 +21,13 @@ const NavBar: React.FC = () => {
             width={1000}
             height={1000}
             priority
-            className="w-20"
+            className="w-16"
           />
         </Link>
 
         {/* Center: Menu */}
         <div className="relative ">
-          <ul className="flex space-x-6">
+          <ul className="flex space-x-6 text-sm">
             {navBarData.map((menuItem, index) => (
               <motion.li
                 key={menuItem.label}
@@ -42,7 +41,8 @@ const NavBar: React.FC = () => {
                 <Link href={menuItem.href}>
                   <motion.h6
                     {...{
-                      className: "flex items-center uppercase tracking-widest hover:text-red-500",
+                      className:
+                        "flex items-center uppercase tracking-widest hover:text-red-500",
                     }}
                   >
                     {menuItem.label}
@@ -76,7 +76,7 @@ const NavBar: React.FC = () => {
                           key={submenuItem.label}
                           {...{
                             className:
-                              "bg-gray-100 dark:bg-gray-800 backdrop-blur-md rounded-xl shadow-lg hover:text-red-500",
+                              "bg-gray-100 dark:bg-gray-800 backdrop-blur-md rounded-md shadow-lg hover:text-red-500",
                           }}
                         >
                           <Link
@@ -94,8 +94,6 @@ const NavBar: React.FC = () => {
             ))}
           </ul>
         </div>
-
-
       </div>
     </nav>
   );

@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import bannerImage from "@/assets/images/home/banner-image.png";
 import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Banner: React.FC = () => {
   return (
@@ -19,6 +21,32 @@ const Banner: React.FC = () => {
           in South-West London, offering tailored property solutions to help
           clients find a residential space they can call home.
         </p>
+        <div className="space-x-2 flex justify-center items-center my-4">
+          <Link
+            href={"#"}
+            className="p-2 bg-gray-800 rounded-lg  text-white hover:bg-thRed transition ease-in-out"
+          >
+            <FaFacebookF />
+          </Link>
+          <Link
+            href={"#"}
+            className="p-2 bg-gray-800 rounded-lg font-bold text-white hover:bg-thRed transition ease-in-out"
+          >
+            <FaInstagram />
+          </Link>
+          <Link
+            href={"#"}
+            className="p-2 bg-gray-800 rounded-lg  text-white hover:bg-thRed transition ease-in-out"
+          >
+            <FaXTwitter />
+          </Link>
+          <Link
+            href={"#"}
+            className="p-2 bg-gray-800 rounded-lg  text-white hover:bg-thRed transition ease-in-out"
+          >
+            <FaLinkedinIn />
+          </Link>
+        </div>
         <div className="space-x-2 flex justify-center items-center">
           <Link
             href={"/tenants"}
