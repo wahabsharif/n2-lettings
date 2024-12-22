@@ -10,7 +10,7 @@ const ContactLettings: React.FC = () => {
       <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 text-left">
         We are committed to meeting and exceeding your expectations with our Guaranteed Rent—put our experience and
         knowledge of lettings to work for you.{' '}
-        <span className="text-cyan-500 px-1">Leave us a message</span> or contact the nearest N2 Lettings.
+        <Link href='/contact-us' className="text-cyan-500 px-1">Leave us a message</Link> or contact the nearest N2 Lettings.
       </p>
 
       {/* Table - wrap in a div for horizontal scroll */}
@@ -19,7 +19,7 @@ const ContactLettings: React.FC = () => {
           <thead>
             <tr className="bg-white dark:bg-gray-900">
               <th className="px-4 py-2 border-b border-black dark:border-white text-left">Mitcham Branch</th>
-              <th className="px-4 py-2 border-b border-black dark:border-white text-left">Cheam, Sutton Branch</th>
+                {/* <th className="px-4 py-2 border-b border-black dark:border-white text-left">Cheam, Sutton Branch</th> */}
             </tr>
           </thead>
           <tbody>
@@ -33,12 +33,12 @@ const ContactLettings: React.FC = () => {
                       {row.mitcham.email}
                     </Link>
                   </td>
-                  <td className="px-4 py-2">
+                  {/* <td className="px-4 py-2">
                     <div className="font-semibold">{row.cheam.name}</div>
                     <Link href={`mailto:${row.cheam.email}`} className="text-cyan-500 hover:underline">
                       {row.cheam.email}
                     </Link>
-                  </td>
+                  </td> */}
                 </tr>
                 {/* Second Row: Contact1 */}
                 <tr className="dark:bg-gray-900">
@@ -50,14 +50,14 @@ const ContactLettings: React.FC = () => {
                       {row.mitcham.contact1}
                     </Link>
                   </td>
-                  <td className="px-4 py-2">
+                  {/* <td className="px-4 py-2">
                     <Link
                       href={`tel:${row.cheam.contact1}`}
                       className="text-gray-600 dark:text-gray-300 hover:underline"
                     >
                       {row.cheam.contact1}
                     </Link>
-                  </td>
+                  </td> */}
                 </tr>
 
               </React.Fragment>

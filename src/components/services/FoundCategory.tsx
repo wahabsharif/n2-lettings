@@ -14,14 +14,11 @@ const FoundCategory = () => {
           <label htmlFor="role" className="block text-sm font-medium mb-1">
             Information
           </label>
-          <select
-            id="role"
-            className="w-full p-2 border dark:bg-gray-900 dark:text-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">I&apos;m a</option>
-            <option value="tenant">Tenant</option>
-            <option value="landlord">Landlord</option>
-          </select>
+          <input
+            type="text"
+            placeholder="I'm a"
+            className="flex-1 p-2 w-full border rounded-md focus:ring-2 focus:ring-blue-500 bg-white dark:text-gray-300"
+          />
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4">

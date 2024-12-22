@@ -8,7 +8,7 @@ const TermsAndConditions = () => {
     return content.split("-").map((item, index) => {
       if (item.trim()) {
         return (
-          <p key={index} className="text-base text-gray-400 ml-4">
+          <p key={index} className="text-base text-gray-600 ml-4">
             {item.trim()}
           </p>
         );

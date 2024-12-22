@@ -9,7 +9,7 @@ export const metadata = generateMetadata({ pageTitle: "Tenants" });
 const TenantsPage = () => {
   return (
     <WebLayout>
-      <PageBanner />
+      <PageBanner imageUrl='/images/banner-image.jpg' />
       <TenantsFilters />
       <TenantsListing />
     </WebLayout>

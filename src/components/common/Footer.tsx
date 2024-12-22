@@ -20,7 +20,7 @@ const Footer = () => {
     <footer className="bg-gray-800 text-white py-8">
       <div className="container mx-auto px-4">
         {/* Footer Layout - 4 Columns (Mobile-first) */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left Column - Company Info with Social Icons */}
           <div>
             <Link href="/">
@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
 
           {/* Center Right Column - More Links */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-4">More Links</h3>
             <ul>
               {footerData.moreLinks.map((link, index) => (
@@ -83,7 +83,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Right Column - Contact Info */}
           <div>
@@ -106,23 +106,7 @@ const Footer = () => {
               </Link>{" "}
               - All rights reserved.
             </p>
-            <div className="flex justify-center items-center space-x-2">
-              <p>Powered By</p>{" "}
-              <Link
-                href={"https://envbyte.com/"}
-                target="_blank"
-                className="flex justify-center items-center"
-              >
-                <Image
-                  src={envLogo}
-                  alt="Powered By Env Byte"
-                  width={500}
-                  height={500}
-                  className="w-4"
-                />
-                <span className="mx-2 font-bold text-[#14b8a6]">ENV BYTE</span>
-              </Link>
-            </div>
+
           </div>
 
           {/* Right Side: Terms & Conditions and Privacy Policy Links */}

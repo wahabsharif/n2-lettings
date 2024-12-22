@@ -4,10 +4,10 @@ import React from "react";
 const ServicesCategories = () => {
   return (
     <div className="p-4 sm:p-6 md:p-0">
-      <h3 className="text-lg font-bold text-red-500 mb-4 text-center">
+      <h3 className="text-xl font-semibold text-gray-600 my-4 text-center">
         N2 Lettings provides the following services:
       </h3>
-      <ul className="list-disc text-md font-semibold text-gray-700 dark:text-gray-300 list-inside mb-6">
+      <ul className="list-disc text-md  text-gray-700 dark:text-gray-300 list-inside mb-6">
         <li>Building work</li>
         <li>Cleaning</li>
         <li>Removals/Rubbish clearance</li>
@@ -17,7 +17,7 @@ const ServicesCategories = () => {
         <li>EICR</li>
       </ul>
 
-      <h4 className="text-lg font-semibold text-center text-red-300 mb-4">
+      <h4 className="text-lg font-semibold text-gray-600 text-center  mb-4">
         Proud Member of the Property Redress Scheme
       </h4>
 

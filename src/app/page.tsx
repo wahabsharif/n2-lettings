@@ -19,7 +19,7 @@ export default function HomePage() {
       <OurServices />
       <FilterBar />
       <PropertyListingsSlider />
-      <OurAmenities />
+      {/* <OurAmenities /> */}
       {/* <Testimonials /> */}
     </WebLayout>
   );

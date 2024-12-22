@@ -10,7 +10,7 @@ export const metadata = generateMetadata({ pageTitle: "Property Management" });
 const PropertyManagement = () => {
   return (
     <WebLayout>
-      <PageBanner />
+      <PageBanner imageUrl='/images/banner-image-5.jpeg'/>
       <PropertyContent />
       <PropertyTerms />
       <PropertyManagementContact />
