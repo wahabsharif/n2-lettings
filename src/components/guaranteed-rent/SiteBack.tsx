@@ -4,11 +4,14 @@ import React from "react";
 
 const SiteBack: React.FC = () => {
     return (
-        <section className="flex flex-col items-center justify-center w-full bg-white dark:bg-gray-900">
+
+        <section className="flex flex-col items-center justify-center w-full bg-white dark:bg-gray-900 ">
+            <h2 className="text-center text-2xl font-bold md:mt-8">Guaranteed Rent Scheme</h2>
+
             <div className="flex flex-wrap w-11/12 md:w-10/12 lg:w-8/12 overflow-hidden">
                 {/* Left Sub-Div */}
                 <div className="w-full md:w-1/2 p-6 flex flex-col justify-center items-center text-thRed dark:text-gray-100">
-                    <h1 className="text-xl font-semibold mb-2">&quot;Site back, collect</h1>
+                    <h1 className="text-xl font-semibold mb-2">&quot;Sit back, collect</h1>
                     <h2 className="text-xl font-semibold mb-2">the rent, we&apos;ll look</h2>
                     <h3 className="text-xl font-semibold mb-2">after your</h3>
                     <h4 className="text-xl font-semibold mb-4">&quot;property&quot;</h4>

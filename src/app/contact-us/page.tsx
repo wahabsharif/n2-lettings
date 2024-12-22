@@ -9,7 +9,7 @@ export const metadata = generateMetadata({ pageTitle: "Contact Us" });
 const ContactPage = () => {
   return (
     <WebLayout>
-      <PageBanner />
+      <PageBanner imageUrl='/images/contact-us.jpg'/>
       <ContactCards />
       <GetAQuote />
       <GoogleMap />

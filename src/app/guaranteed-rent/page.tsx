@@ -11,7 +11,7 @@ export const metadata = generateMetadata({ pageTitle: "Guaranteed Rent" });
 const RentGuaranteed = () => {
   return (
     <WebLayout>
-      <PageBanner />
+      <PageBanner imageUrl='/images/banner-image-2.jpg'/>
       <SiteBack />
       <RentSchema />
       <ComparisonTable />

@@ -10,7 +10,7 @@ interface ComparisonData {
       id: 1,
       comparison: 'Agent Commission',
       typicalHighStreetAgent: '10-15%',
-      n2LettingsGuaranteedRent: 'Commission',
+      n2LettingsGuaranteedRent: 'NO',
     },
     {
       id: 2,

@@ -12,7 +12,7 @@ export const footerData = {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Blog", href: "/blog" },
+    // { label: "Blog", href: "/blog" },
   ],
   moreLinks: [
     { label: "Compare listings", href: "/compare-listings" },
