@@ -10,7 +10,7 @@ export const metadata = generateMetadata({ pageTitle: "Smart Care Plan" });
 const SmartCarePlan = () => {
   return (
     <WebLayout>
-      <PageBanner imageUrl='/images/banner-image-2.jpg' />
+      <PageBanner />
       <PackagePlan />
       <CoveredPlan />
       <SmartCareContact />

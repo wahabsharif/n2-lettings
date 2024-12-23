@@ -10,8 +10,8 @@ const FilterBar: React.FC = () => {
   const handleTypeSelection = (type: string) => {
     setSelectedTypes((prevSelected) =>
       prevSelected.includes(type)
-        ? prevSelected.filter((item) => item !== type) // Deselect if already selected
-        : [...prevSelected, type] // Select the type if not already selected
+        ? prevSelected.filter((item) => item !== type)
+        : [...prevSelected, type]
     );
   };
 
@@ -23,7 +23,8 @@ const FilterBar: React.FC = () => {
   return (
     <motion.div
       {...{
-        className: "flex flex-col w-full md:max-w-7xl md:flex-row items-center justify-end bg-white/30 dark:bg-gray-800/30 backdrop-blur-md p-6 mx-auto",
+        className:
+          "flex flex-col w-full md:max-w-7xl md:flex-row items-center justify-end bg-white/30 dark:bg-gray-800/30 backdrop-blur-md p-6 mx-auto",
       }}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -43,8 +44,11 @@ const FilterBar: React.FC = () => {
           <button
             key={type}
             onClick={() => handleTypeSelection(type)}
-            className={`px-4 py-2  rounded-md text-black focus:outline-none transition-all transform ${selectedTypes.includes(type) ? "bg-red-500" : "bg-gray-100"
-              } hover:bg-red-400 active:scale-95`}
+            className={`px-4 py-2  rounded-md text-black focus:outline-none transition-all transform ${
+              selectedTypes.includes(type)
+                ? "bg-red-500 text-white"
+                : "bg-gray-100"
+            } hover:bg-red-400 active:scale-95`}
           >
             {type}
           </button>

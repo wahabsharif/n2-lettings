@@ -1,41 +1,35 @@
 import React from "react";
 import Link from "next/link";
-import { FaHome, FaKey, FaDollarSign } from "react-icons/fa";
+import { FaHandshake, FaHome } from "react-icons/fa";
+import { FaVanShuttle } from "react-icons/fa6";
 
 const services = [
   {
-    icon: <FaHome className="text-4xl text-blue-500" />,
-    title: "Buy a Home",
+    icon: <FaHandshake className="text-4xl text-blue-500" />,
+    title: "Guaranteed Rent",
     description:
-      "Find your dream home from a wide variety of listings. Discover properties with the features and amenities you need, tailored to your preferences.",
-    link: "/buy",
+      "Our Guaranteed Rent has proven to be very effective and most favoured, simply because this leaves you free to concentrate on your next opportunity.",
+    link: "#",
   },
   {
-    icon: <FaKey className="text-4xl text-green-500" />,
-    title: "Rent a Home",
+    icon: <FaHome className="text-4xl text-green-500" />,
+    title: "Property Management",
     description:
-      "Explore rental properties that suit your needs. Find the perfect space for your lifestyle, whether short-term or long-term.",
-    link: "/rent",
+      "Our property management teams never stand still when it comes to the day-to- day managing of your asset, finding and retaining tenants, collecting rent and overseeing maintenance and compliancy",
+    link: "#",
   },
   {
-    icon: <FaDollarSign className="text-4xl text-yellow-500" />,
-    title: "Sell a Home",
+    icon: <FaVanShuttle className="text-4xl text-yellow-500" />,
+    title: "Smartcare Plan",
     description:
-      "List your property and connect with potential buyers. Benefit from expert guidance to maximize your sale value.",
-    link: "/sell",
+      "Our aim is to provide a simple and affordable insurance package",
+    link: "#",
   },
 ];
 
 const OurServices = () => {
   return (
     <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-center">
-        <div className="bg-thRed/20 p-1 px-2 inline-block rounded-full">
-          <h3 className="text-md md:text-lg  uppercase lg:text-xl text-center tracking-widest text-thRed">
-            Our Services
-          </h3>
-        </div>
-      </div>
       <div className="flex items-center justify-center mt-4 ">
         <div className="mb-6 inline-block">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">

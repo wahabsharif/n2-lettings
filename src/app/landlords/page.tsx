@@ -8,7 +8,7 @@ export const metadata = generateMetadata({ pageTitle: "Landlords" });
 export default function Landlords() {
   return (
     <WebLayout>
-      <PageBanner  imageUrl='/images/banner-image-3.jpg'/>
+      <PageBanner />
       <LandlordsTerms />
     </WebLayout>
   );
