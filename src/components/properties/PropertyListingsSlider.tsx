@@ -10,7 +10,6 @@ const PropertyListings = () => {
   const listingsToShow = listingsData.slice(0, 3);
   return (
     <div className="container mx-auto p-6">
-
       <div className="flex items-center justify-center">
         <div className="my-6 inline-block">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">

@@ -1,35 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html.dark body {
-  background-color: #111827;
-  color: #f3f4f6;
-}
-
 body {
-  height: 100vh;
   font-family: "Rubik", serif;
   color: #0a0a0a;
   background-color: #feffff;
-  transition: background-color 0.3s ease, color 0.3s ease;
   -ms-overflow-style: none;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  /* font-family: "Prata", serif; */
-  font-family: "Rubik", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-optical-sizing: auto;
-}
+
 .grad-text {
   background: linear-gradient(#8d9598, #e93d3d);
   background-clip: text;

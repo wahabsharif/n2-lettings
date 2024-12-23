@@ -2,7 +2,6 @@
 
 import { footerData } from "@/data/footerData";
 import Logo from "@/assets/images/logo/n2-logo.svg";
-import envLogo from "@/assets/images/logo/env-icon.svg";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -10,7 +9,7 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedin,
-} from "react-icons/fa"; // Import social media icons
+} from "react-icons/fa";
 
 const Footer = () => {
   // Get the current year
@@ -30,7 +29,7 @@ const Footer = () => {
                 width={1000}
                 height={1000}
                 priority
-                className="w-28 md:w-36" // Adjust logo size on medium screens
+                className="w-28 md:w-36"
               />
             </Link>
             <p className="text-sm italic my-4">{footerData.companyTagline}</p>
@@ -68,23 +67,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Center Right Column - More Links */}
-          {/* <div>
-            <h3 className="text-lg font-semibold mb-4">More Links</h3>
-            <ul>
-              {footerData.moreLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white text-sm mb-2 block"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-
           {/* Right Column - Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
@@ -106,7 +88,6 @@ const Footer = () => {
               </Link>{" "}
               - All rights reserved.
             </p>
-
           </div>
 
           {/* Right Side: Terms & Conditions and Privacy Policy Links */}
