@@ -6,8 +6,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ReduxProvider>
-      <html lang="en">{children}</html>
-    </ReduxProvider>
+    <html lang="en">
+      <ReduxProvider>
+        <body>{children}</body>
+      </ReduxProvider>
+    </html>
   );
 }

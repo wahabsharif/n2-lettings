@@ -1,8 +1,7 @@
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
-import type { Metadata } from "next";
-import React from "react";
+import SideBar from "@/components/dashboard/SideBar";
+import { Metadata } from "next";
 import "@/styles/dash.css";
-
 export const generateMetadata = ({
   pageTitle,
 }: {
@@ -18,11 +17,12 @@ interface DashLayoutProps {
 const DashLayout: React.FC<DashLayoutProps> = ({ children }) => {
   return (
     <ProtectedRoute>
-      <body className="flex h-screen">
+      <div className="flex h-screen">
+        <SideBar />
         <main className="min-h-screen w-full py-2 overflow-y-auto">
           {children}
         </main>
-      </body>
+      </div>
     </ProtectedRoute>
   );
 };

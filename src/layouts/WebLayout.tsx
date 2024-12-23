@@ -22,7 +22,7 @@ export const generateMetadata = ({
 
 const WebLayout: React.FC<WebLayoutProps> = ({ children }) => {
   return (
-    <body className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <header>
         <NavBar />
         <MobileNavBar />
@@ -30,7 +30,7 @@ const WebLayout: React.FC<WebLayoutProps> = ({ children }) => {
       <ScrollToTop />
       <main className="flex-1">{children}</main>
       <Footer />
-    </body>
+    </div>
   );
 };
 

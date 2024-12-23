@@ -1,6 +1,8 @@
-import WebLayout from "@/layouts/WebLayout";
+import WebLayout, { generateMetadata } from "@/layouts/WebLayout";
 import Link from "next/link";
 import React from "react";
+
+export const metadata = generateMetadata({ pageTitle: "Not Found" });
 
 const NotFoundPage = () => {
   return (
