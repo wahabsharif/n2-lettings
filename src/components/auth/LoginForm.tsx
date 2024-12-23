@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+
 const ClipLoader = dynamic(
   () => import("react-spinners").then((mod) => mod.ClipLoader),
   { ssr: false }
@@ -36,14 +37,11 @@ const LoginForm = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("/api/login", {
-        username,
-        password,
-      });
+      const response = await axios.post("/api/login", { username, password });
 
-      if (response.data.success) {
-        const { token, user } = response.data;
+      const { token, user } = response.data;
 
+      if (token && user) {
         dispatch(
           setCredentials({
             ...user,
@@ -73,6 +71,8 @@ const LoginForm = () => {
         );
 
         router.push("/dash");
+      } else {
+        toast.error("Unexpected response from server.");
       }
     } catch (error) {
       console.error("Login error:", error);
@@ -103,7 +103,7 @@ const LoginForm = () => {
             <input
               type="text"
               value={username}
-              onChange={(e) => setUsername(e.target.value.toLowerCase())} // Convert input to lowercase
+              onChange={(e) => setUsername(e.target.value.toLowerCase())}
               required
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white bg-gray-800"
             />

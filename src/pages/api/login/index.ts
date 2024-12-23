@@ -32,7 +32,6 @@ export default async function handler(
 
     const { username, password: inputPassword } = req.body;
 
-    // Check if both username and password exist
     if (!username || !inputPassword) {
       res.status(400).json({ error: "Username and password are required" });
       return;
@@ -63,37 +62,31 @@ export default async function handler(
       { expiresIn: "1h" }
     );
 
-    // Check if there's an existing valid token for the user
-    const [existingTokens] = await pool.query(
+    const [existingTokens] = await pool.query<User[]>(
       "SELECT * FROM user_tokens WHERE user_id = ? AND expires_at > NOW()",
       [user.id]
     );
 
-    // If there's a valid token, return it and do not insert a new one
     if (existingTokens.length > 0) {
       return res.status(200).json({
         message: "Login successful with an existing valid token",
         user: { ...user },
-        token: existingTokens[0].token, // Return the existing token
+        token: existingTokens[0].token,
       });
     }
 
-    // Store the new token in the database if no valid token exists
     const tokenExpiry = new Date();
-    tokenExpiry.setHours(tokenExpiry.getHours() + 1); // Token expires in 1 hour
+    tokenExpiry.setHours(tokenExpiry.getHours() + 1);
 
     await pool.query(
       "INSERT INTO user_tokens (user_id, token, expires_at) VALUES (?, ?, ?)",
       [user.id, token, tokenExpiry]
     );
 
-    // Destructure to exclude the password
-    const { password, ...userDetails } = user;
-
     res.status(200).json({
       message: "Login successful",
-      user: userDetails,
-      token: token,
+      user: { ...user, password: undefined },
+      token,
     });
   } catch (error) {
     console.error("Error:", error);
