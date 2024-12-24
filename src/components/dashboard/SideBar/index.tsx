@@ -19,7 +19,7 @@ const SideBar = () => {
           </div>
         </div>
         <div>
-          <p className="text-lg font-bold">
+          <p className="text-md truncate font-bold">
             {user?.first_name} {user?.last_name}
           </p>
           <p className="text-sm text-gray-400">{user?.role}</p>
