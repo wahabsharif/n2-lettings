@@ -1,0 +1,53 @@
+# MySQL Queries To Create a Database Tables
+
+## 1. Users Table
+
+CREATE TABLE users (
+id INT AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR(255) NOT NULL,
+last_name VARCHAR(255) NOT NULL,
+username VARCHAR(255) NOT NULL UNIQUE,
+email VARCHAR(255) NOT NULL UNIQUE,
+phone VARCHAR(15),
+role VARCHAR(50) NOT NULL,
+password VARCHAR(255) NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+## 2. User Tokens Table
+
+CREATE TABLE user_tokens (
+id INT AUTO_INCREMENT PRIMARY KEY,
+user_id INT NOT NULL,
+token VARCHAR(255) NOT NULL,
+expires_at DATETIME NOT NULL,
+FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+## 3. Properties Table
+
+CREATE TABLE properties (
+id INT AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(255) NOT NULL,
+slug VARCHAR(255) NOT NULL UNIQUE,
+price DECIMAL(10, 2) NOT NULL,
+units INT NOT NULL,
+property_type VARCHAR(100) NOT NULL,
+property_status VARCHAR(100) NOT NULL,
+beds INT NOT NULL,
+baths INT NOT NULL,
+images JSON,
+description TEXT NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+## 4. Property Images Table (Optional for storing image details separately)
+
+CREATE TABLE property_images (
+id INT AUTO_INCREMENT PRIMARY KEY,
+property_id INT NOT NULL,
+image_path VARCHAR(255) NOT NULL,
+FOREIGN KEY (property_id) REFERENCES properties(id) ON DELETE CASCADE
+);
