@@ -1,3 +1,4 @@
+import PropertiesList from "@/components/dashboard/Properties/PropertiesList";
 import DashLayout, { generateMetadata } from "@/layouts/DashLayout";
 import React from "react";
 
@@ -7,7 +8,7 @@ export default function Dashboard() {
   return (
     <DashLayout>
       <div className="flex justify-center items-center">
-        <h1>Properties</h1>
+        <PropertiesList />
       </div>
     </DashLayout>
   );
